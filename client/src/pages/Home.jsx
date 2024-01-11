@@ -22,7 +22,7 @@ const Home = () => {
     // You can customize this array with your actual card data
     {
       title: 'Idrettslaget Trond',
-      image: 'Idrettslaget_Trond.png',
+      image: Idrettslaget_Trond,
       content: 'We had a goal to make a brand new and user-friendly website for Idrettslaget Trond. The website had new features and functions aswell as a payment gateway, so that they can send payments from the website aswell.',
       link: 'https://rosenborgbanen.no'
     },
@@ -176,7 +176,7 @@ const Home = () => {
             </button>
             <div className='flex p-5 items-center ' style={{ width: '100%' }} ref={scrollContainerRef}>
               {/* Horizontal scrolling container */}
-              {cardData.map((card, index) => (
+              {cardData && cardData.map((card, index) => (
                 <div
                   key={index}
                   className={`w-1/3 mx-2`}
@@ -186,7 +186,7 @@ const Home = () => {
                   }}
                 >
                   <Link to={card.link}>
-                    <Card className='w-full' imgAlt='' imgSrc={`../../img/${card.image}`}>
+                    <Card className='w-full' imgAlt='' imgSrc={card.image}>
                       <h5 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
                         {card.title}
                       </h5>
