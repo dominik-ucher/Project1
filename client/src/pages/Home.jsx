@@ -44,24 +44,25 @@ const Home = () => {
   };
 
   const axiosInstance = axios.create({baseURL: import.meta.env.VITE_REACT_APP_API_URL,});
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [subject, setSubject] = useState("")
+  const [message, setMessage] = useState("")
+
   const [isSent, setIsSent] = useState(false);
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
   
     try {
-      const response = await axiosInstance.post('/api/contact/send-email', formData, {
+      const response = await axiosInstance.post('/api/contact/send-email', {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+      }, {
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json',
@@ -71,12 +72,10 @@ const Home = () => {
       if (response.status === 200) {
         // Handle success
         setIsSent(true);
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-        });
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
       } else {
         // Handle failure
         console.error('Failed to send email');
@@ -248,10 +247,10 @@ const Home = () => {
             <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto'></div>
           </div>
           <form className='gap-5 flex justify-center flex-col w-48'>
-            <input type="text" placeholder='Name' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={formData.name} onChange={handleInputChange} />
-            <input type="text" placeholder='email@email.com' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={formData.email} onChange={handleInputChange} />
-            <input type="text" placeholder='About' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={formData.subject} onChange={handleInputChange} />
-            <textarea type="textarea" placeholder='Message' className='h-32 mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={formData.message} onChange={handleInputChange} />
+            <input type="text" placeholder='Name' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white'  value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" placeholder='email@email.com' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="text" placeholder='About' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={subject} onChange={(e) => setSubject(e.target.value)} />
+            <textarea type="textarea" placeholder='Message' className='h-32 mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={message} onChange={(e) => setMessage(e.target.value)} />
             <Button pill color="gray" className="mt-5" onClick={handleSubmit}>Send</Button>
             {isSent && (
               <div className="text-green-500">Email Sent</div>

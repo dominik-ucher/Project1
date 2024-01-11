@@ -2,22 +2,25 @@ import nodemailer from 'nodemailer';
 
 // Configure Nodemailer transporter
 const transporter = nodemailer.createTransport({
-  service: 'smtp.hostinger.com', // e.g., 'Gmail', 'Yahoo', etc.
-  port: 587,
-  secure: false,
+  host: "smtp.hostinger.com",
+  secure: true, 
+  port: 465,
   auth: {
-    user: 'contact@raindropcoding.com',
-    pass: '', //HUSK Å SKRIVE PASSORD HER NÅR FERDIG
+      user: 'contact@raindropcoding.com',
+      pass: '',
   },
 });
 
 // Controller to send email
 const sendEmail = (req, res) => {
-  const { name, email, subject, message } = req.body;
+  const name = req.body.name;
+  const email = req.body.email;
+  const subject = req.body.subject;
+  const message = req.body.message; 
 
   const mailOptions = {
-    from: email,
-    to: 'dominikucher@hotmail.com', // The recipient's email address based on the selected option
+    from: 'contact@raindropcoding.com',
+    to: 'dominik@raindropcoding.com', // The recipient's email address based on the selected option
     subject: `Contact Form Submission - ${subject}`,
     text: `This is a message sent from Contact form on RaindropCoding website.\nHit "reply" to reply to sender.\n\n${message}`,
     replyTo: `${name} <${email}>`,
@@ -29,7 +32,7 @@ const sendEmail = (req, res) => {
       res.status(500).json({ success: false, message: 'Internal Server Error' });
     } else {
       console.log('Email sent: ' + info.response);
-      res.json({ success: true, message: 'Email sent successfully' });
+      res.status(200).json({ success: true, message: 'Email sent successfully' });
     }
   });
 };
