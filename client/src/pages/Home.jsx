@@ -8,7 +8,9 @@ import '../style.css';
 import FadeIn from 'react-fade-in/lib/FadeIn';
 import { Link } from 'react-router-dom';
 import axios from 'axios'
+import team_coding from '../../img/team_coding.jpg'
 import Idrettslaget_Trond from '../../img/Idrettslaget_Trond.png'
+import raindrop from '../../img/raindrop.jpg'
 
 const Home = () => {
   const scrollContainerRef = useRef(null);
@@ -84,14 +86,17 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className='bg-black'>
       {/* First Section */}
       <FadeIn>
-      <div className='flex items-center justify-center h-80 bg-black p-8 md:h-screen'>
+      <div className='flex items-center justify-center h-80 bg-black md:h-screen'>
         <div className='text-center'>
           <FadeIn delay={300}>
           <h1 className='text-4xl md:text-8xl font-bold tracking-tighter text-white'>
-            Welcome to RaindropCoding
+            Welcome to
+          </h1>
+          <h1 className='text-4xl md:text-8xl font-bold tracking-tighter text-white'>
+            RaindropCoding
           </h1>
           </FadeIn>
           <FadeIn delay={400}>
@@ -105,26 +110,26 @@ const Home = () => {
       </FadeIn>
 
       {/* Second Section */}
-      <div className='flex items-center justify-center bg-black'>
-        <div className='container flex items-center justify-center py-8 mx-auto rounded-lg md:p-1'>
-          <div className='w-full md:w-2/3'>
+      {/* <div className='flex items-center justify-center bg-black'>
+        <div className='container flex items-center justify-center mx-auto rounded-lg md:p-1'>
+          <div className='flex justify-center items-center w-full md:w-2/3'>
             <img
-              className='object-cover object-center w-full md:h-auto mb-10 border-gray-200 dark:border-gray-900 border rounded-lg shadow-md'
+              className='flex justify-center items-center object-center w-full md:h-96 md:w-auto mb-10 border-gray-200 dark:border-gray-900 border rounded-lg shadow-md'
               alt='hero'
-              src={Background}
+              src={raindrop}
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
        {/* Third Section */}
        <div className='w-full text-center bg-black pt-10'>
           <h2 className='sm:text-5xl font-medium title-font text-white mb-4'>About Us</h2>
-          <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto'></div>
+          <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto mb-4'></div>
         </div>
        <div className='flex flex-wrap items-center justify-center bg-black text-gray-500'>
         <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-          <img alt="feature" className="object-cover object-center h-full w-full" src={Background} />
+          <img alt="feature" className="object-cover object-center h-full w-full" src={team_coding} />
         </div>
 
         <div className="lg:w-1/2 px-6 py-6">
@@ -243,7 +248,7 @@ const Home = () => {
             )}
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

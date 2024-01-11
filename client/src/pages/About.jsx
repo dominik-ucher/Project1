@@ -3,19 +3,20 @@ import Background from '../../img/background.jpg';
 import Hosting from '../../img/Hosting.png';
 import Domain from '../../img/Domain.png';
 import Design from '../../img/Design.png';
+import team_coding from '../../img/team_coding.jpg'
 
 const About = () => {
 
 
     return(
-        <>
+        <div className='bg-black'>
         <div className='w-full text-center bg-black pt-10'>
             <h2 className='sm:text-5xl font-medium title-font text-white mb-4'>About Us</h2>
-            <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto'></div>
+            <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto mb-4'></div>
             </div>
         <div className='flex flex-wrap items-center justify-center bg-black text-gray-500'>
             <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-            <img alt="feature" className="object-cover object-center h-full w-full" src={Background} />
+            <img alt="feature" className="object-cover object-center h-full w-full" src={team_coding} />
             </div>
 
             <div className="lg:w-1/2 px-6 py-6">
@@ -72,7 +73,7 @@ const About = () => {
             </div>
             </div>
         </div>
-        </>
+        </div>
     )
 }
 
