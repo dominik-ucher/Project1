@@ -7,6 +7,7 @@ import { Button, Card } from 'flowbite-react';
 import '../style.css';
 import FadeIn from 'react-fade-in/lib/FadeIn';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 import Idrettslaget_Trond from '../../img/Idrettslaget_Trond.png'
 
 const Home = () => {
@@ -36,6 +37,49 @@ const Home = () => {
   const scrollRight = () => {
     if (currentIndex < 3) { // Adjust this based on the number of cards
       setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const axiosInstance = axios.create({baseURL: import.meta.env.VITE_REACT_APP_API_URL,});
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [isSent, setIsSent] = useState(false);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    try {
+      const response = await axiosInstance.post('/api/contact/send-email', formData, {
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.status === 200) {
+        // Handle success
+        setIsSent(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        // Handle failure
+        console.error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('An error occurred', error);
     }
   };
 
@@ -189,11 +233,14 @@ const Home = () => {
           <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto'></div>
         </div>
         <form className='gap-5 flex justify-center flex-col w-48'>
-        <input type="text" placeholder='Name' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white'/>
-        <input type="text" placeholder='email@email.com' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white'/>
-        <input type="text" placeholder='About' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white'/>
-        <textarea type="textarea" placeholder='Message' className='h-32 mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white'/>
-        <Button pill color="gray" className="mt-5">Send</Button>
+        <input type="text" placeholder='Name' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={formData.name} onChange={handleInputChange}/>
+        <input type="text" placeholder='email@email.com' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={formData.email} onChange={handleInputChange}/>
+        <input type="text" placeholder='About' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={formData.subject} onChange={handleInputChange}/>
+        <textarea type="textarea" placeholder='Message' className='h-32 mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={formData.message} onChange={handleInputChange}/>
+        <Button pill color="gray" className="mt-5" onClick={handleSubmit}>Send</Button>
+        {isSent && (
+              <div className="text-green-500">Email Sent</div>
+            )}
         </form>
       </div>
     </>
