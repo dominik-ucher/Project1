@@ -90,6 +90,7 @@ const Home = () => {
 
     <div className='bg-black'>
           <Helmet>
+            <title>Home | RaindropCoding</title>
             <meta name="title" content="Home | RaindropCoding" />
             <meta name="description" content="Our digital marketing services are designed to help you reach your target audience and grow your business. We specialize in creating custom website designs" />
             <meta name="keywords" content="Digital, Marketing, Website, Coding" />

@@ -50,13 +50,14 @@ const Contact = () => {
 
     return(
     <div className='flex flex-wrap items-center justify-center p-20 bg-black text-gray-500'>
-      <Helmet>
+        <Helmet>
+            <title>Contact | RaindropCoding</title>
             <meta name="title" content="Contact | RaindropCoding" />
             <meta name="description" content="Let us know what you are thinking about, and contact us!" />
             <meta name="keywords" content="Digital, Marketing, Website, Coding" />
             <meta name="robots" content="index, follow" />
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-            </Helmet>
+        </Helmet>
         <div className='w-full text-center'>
           <h2 className='sm:text-5xl font-medium title-font text-white mb-4'>Contact Us</h2>
           <div className='w-16 h-1 rounded-full bg-white mx-auto'></div>
