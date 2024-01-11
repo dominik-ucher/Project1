@@ -6,6 +6,7 @@ import Design from '../../img/Design.png';
 import { Button, Card } from 'flowbite-react';
 import '../style.css';
 import FadeIn from 'react-fade-in/lib/FadeIn';
+import Idrettslaget_Trond from '../../img/Idrettslaget_Trond.png'
 
 const Home = () => {
   const scrollContainerRef = useRef(null);
@@ -15,24 +16,13 @@ const Home = () => {
     // Array containing your card data, each element represents a card
     // You can customize this array with your actual card data
     {
-      title: 'Card 1 Title',
-      content: 'Card 1 Content',
+      title: 'Idrettslaget Trond',
+      image: 'Idrettslaget_Trond.png',
+      content: 'We had a goal to make a brand new and user-friendly website for Idrettslaget Trond. The website had new features and functions aswell as a payment gateway, so that they can send payments from the website aswell.',
     },
     {
-      title: 'Card 2 Title',
-      content: 'Card 2 Content',
-    },
-    {
-      title: 'Card 2 Title',
-      content: 'Card 2 Content',
-    },
-    {
-      title: 'Card 2 Title',
-      content: 'Card 2 Content',
-    },
-    {
-      title: 'Card 2 Title',
-      content: 'Card 2 Content',
+      title: 'Rosenborgbanen',
+      content: 'We got a call to make a simple and easy website for Rosenborgbanen, so that it will state basic information aswell as contact information.',
     },
     // ... More cards
   ];
@@ -138,7 +128,7 @@ const Home = () => {
                   display: currentIndex === Math.floor(index / 3) ? 'block' : 'none',
                 }}
               >
-                <Card className='w-full' imgAlt='' imgSrc={Background}>
+                <Card className='w-full' imgAlt='' imgSrc={`../../img/${card.image}`}>
                   <h5 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
                     {card.title}
                   </h5>

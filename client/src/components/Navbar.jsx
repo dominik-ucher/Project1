@@ -7,7 +7,7 @@ export default function DefaultNavbar() {
   return (
     <Navbar fluid className="sticky top-0 z-10 bg-black">
       <Link to="/"><Navbar.Brand>
-        <img alt="Logo" className="mr-3 h-6 sm:h-9" src={Logo_w_Text} />
+        <img alt="Logo" className="mr-3 h-12 sm:h-16" src={Logo_w_Text} />
       </Navbar.Brand>
       </Link>
       <Navbar.Toggle />

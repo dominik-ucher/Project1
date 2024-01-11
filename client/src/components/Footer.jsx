@@ -10,7 +10,7 @@ export default function FooterWithLogo() {
     <Footer container className='bg-black'>
       <div className="w-full text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
-          <Link to="/"><Footer.Brand alt="Logo" src={Logo_w_Text} /></Link>
+          <Link to="/"><Footer.Brand alt="Logo" className="h-12" src={Logo_w_Text} /></Link>
           <Footer.LinkGroup>
             <Footer.Link href="#" className='text-white'>About</Footer.Link>
             <Footer.Link href="#" className='text-white'>Privacy Policy</Footer.Link>
@@ -19,7 +19,7 @@ export default function FooterWithLogo() {
           </Footer.LinkGroup>
         </div>
         <Footer.Divider className='bg-white' />
-        <Footer.Copyright by="UcherTech™" href="#" year={2022} className='text-white'/>
+        <Footer.Copyright by="RaindropCoding™" href="#" year={2024} className='text-white'/>
       </div>
     </Footer>
     </div>
