@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 const transporter = nodemailer.createTransport({
   service: 'Gmail', // e.g., 'Gmail', 'Yahoo', etc.
   auth: {
-    user: 'overordnet@trondfotball.no',
+    user: '',
     pass: '', //HUSK Å SKRIVE PASSORD HER NÅR FERDIG
   },
 });
