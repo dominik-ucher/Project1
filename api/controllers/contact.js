@@ -2,20 +2,22 @@ import nodemailer from 'nodemailer';
 
 // Configure Nodemailer transporter
 const transporter = nodemailer.createTransport({
-  service: 'Gmail', // e.g., 'Gmail', 'Yahoo', etc.
+  service: 'smtp.hostinger.com', // e.g., 'Gmail', 'Yahoo', etc.
+  port: 587,
+  secure: false,
   auth: {
-    user: '',
+    user: 'contact@raindropcoding.com',
     pass: '', //HUSK Å SKRIVE PASSORD HER NÅR FERDIG
   },
 });
 
 // Controller to send email
 const sendEmail = (req, res) => {
-  const { name, email, subject, selectedOption, message } = req.body;
+  const { name, email, subject, message } = req.body;
 
   const mailOptions = {
     from: email,
-    to: 'contact@raindropcoding.com', // The recipient's email address based on the selected option
+    to: 'dominikucher@hotmail.com', // The recipient's email address based on the selected option
     subject: `Contact Form Submission - ${subject}`,
     text: `This is a message sent from Contact form on RaindropCoding website.\nHit "reply" to reply to sender.\n\n${message}`,
     replyTo: `${name} <${email}>`,

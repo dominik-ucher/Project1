@@ -15,7 +15,7 @@ const About = () => {
             <title>About | RaindropCoding</title>
             <meta name="title" content="About | RaindropCoding" />
             <meta name="description" content="With our Digital Marketing service we can help increase your reach and popularity" />
-            <meta name="keywords" content="Digital, Marketing, Website, Coding" />
+            <meta name="keywords" content="Raindrop, RaindropCoding, Coding, Digital, Marketing, Website" />
             <meta name="robots" content="index, follow" />
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             </Helmet>

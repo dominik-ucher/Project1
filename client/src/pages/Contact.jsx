@@ -54,7 +54,7 @@ const Contact = () => {
             <title>Contact | RaindropCoding</title>
             <meta name="title" content="Contact | RaindropCoding" />
             <meta name="description" content="Let us know what you are thinking about, and contact us!" />
-            <meta name="keywords" content="Digital, Marketing, Website, Coding" />
+            <meta name="keywords" content="Raindrop, RaindropCoding, Coding, Digital, Marketing, Website" />
             <meta name="robots" content="index, follow" />
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         </Helmet>
