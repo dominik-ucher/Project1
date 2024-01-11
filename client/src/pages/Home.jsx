@@ -12,6 +12,7 @@ import team_coding from '../../img/team_coding.jpg'
 import Idrettslaget_Trond from '../../img/Idrettslaget_Trond.png'
 import raindrop from '../../img/raindrop.jpg'
 import { Helmet } from 'react-helmet';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Home = () => {
   const scrollContainerRef = useRef(null);
@@ -138,7 +139,8 @@ const Home = () => {
         </div>
         <div className='flex flex-wrap items-center justify-center bg-black text-gray-500'>
           <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-            <img alt="feature" className="object-cover object-center h-full w-full" src={team_coding} />
+            <LazyLoadImage alt="feature" className="object-cover object-center h-full w-full" src={team_coding} />
+            {/* <img alt="feature" className="object-cover object-center h-full w-full" src={team_coding} /> */}
           </div>
 
           <div className="lg:w-1/2 px-6 py-6">

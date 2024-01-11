@@ -19,7 +19,7 @@ export default function FooterWithLogo() {
           </Footer.LinkGroup>
         </div>
         <Footer.Divider className='bg-white' />
-        <Footer.Copyright by="RaindropCoding™" href="#" year={2024} className='text-white'/>
+        <Footer.Copyright by="RaindropCoding™" year={2024} className='text-white'/>
       </div>
     </Footer>
     </div>
