@@ -6,6 +6,7 @@ import Design from '../../img/Design.png';
 import { Button, Card } from 'flowbite-react';
 import '../style.css';
 import FadeIn from 'react-fade-in/lib/FadeIn';
+import { Link } from 'react-router-dom';
 import Idrettslaget_Trond from '../../img/Idrettslaget_Trond.png'
 
 const Home = () => {
@@ -19,10 +20,7 @@ const Home = () => {
       title: 'Idrettslaget Trond',
       image: 'Idrettslaget_Trond.png',
       content: 'We had a goal to make a brand new and user-friendly website for Idrettslaget Trond. The website had new features and functions aswell as a payment gateway, so that they can send payments from the website aswell.',
-    },
-    {
-      title: 'Rosenborgbanen',
-      content: 'We got a call to make a simple and easy website for Rosenborgbanen, so that it will state basic information aswell as contact information.',
+      link: 'https://rosenborgbanen.no'
     },
     // ... More cards
   ];
@@ -128,6 +126,7 @@ const Home = () => {
                   display: currentIndex === Math.floor(index / 3) ? 'block' : 'none',
                 }}
               >
+                <Link to={card.link}>
                 <Card className='w-full' imgAlt='' imgSrc={`../../img/${card.image}`}>
                   <h5 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
                     {card.title}
@@ -136,7 +135,9 @@ const Home = () => {
                     {card.content}
                   </p>
                 </Card>
+                </Link>
               </div>
+              
             ))}
           </div>
           <button onClick={scrollRight} className={`px-4 py-2 bg-gray-800 text-white rounded-r ${currentIndex === maxIndex && 'hidden'}`}>

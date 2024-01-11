@@ -14,7 +14,7 @@ export default function DefaultNavbar() {
       <Navbar.Collapse>
         <Link to="/" ><Navbar.Link className='text-white'>Home</Navbar.Link></Link>
         <Link to="/about"><Navbar.Link className='text-white'>About</Navbar.Link></Link>
-        <Link to="/references"><Navbar.Link className='text-white'>Projects</Navbar.Link></Link>
+        {/* <Link to="/references"><Navbar.Link className='text-white'>Projects</Navbar.Link></Link> */}
         <Link to="/contact"><Navbar.Link className='text-white'>Contact</Navbar.Link></Link>
       </Navbar.Collapse>
     </Navbar>
