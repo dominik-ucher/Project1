@@ -164,45 +164,46 @@ const Home = () => {
 
         {/* Fourth Section */}
         <div className='flex flex-col pt-10 bg-black text-gray-500'>
-          <div className='w-full text-center'>
-            <h2 className='sm:text-5xl font-medium title-font text-white mb-4'>Our Projects</h2>
-            <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto'></div>
-          </div>
+  <div className='w-full text-center'>
+    <h2 className='sm:text-5xl font-medium title-font text-white mb-4'>Our Projects</h2>
+    <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto'></div>
+  </div>
 
-          <div className='flex items-center'>
-            <button onClick={scrollLeft} className={`px-4 py-2 bg-gray-800 text-white rounded-l ${currentIndex === 0 && 'hidden'}`}>
-              &lt; {/* Left arrow */}
-            </button>
-            <div className='flex p-5 items-center ' style={{ width: '100%' }} ref={scrollContainerRef}>
-              {/* Horizontal scrolling container */}
-              {cardData && cardData.map((card, index) => (
-                <div
-                  key={index}
-                  className={`w-1/3 mx-2`}
-                  style={{
-                    flexShrink: 0,
-                    display: currentIndex === Math.floor(index / 3) ? 'block' : 'none',
-                  }}
-                >
-                  <Link to={card.link}>
-                    <Card className='w-full' imgAlt='' imgSrc={card.image}>
-                      <h5 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
-                        {card.title}
-                      </h5>
-                      <p className='font-normal text-gray-700 dark:text-gray-400'>
-                        {card.content}
-                      </p>
-                    </Card>
-                  </Link>
-                </div>
-
-              ))}
-            </div>
-            <button onClick={scrollRight} className={`px-4 py-2 bg-gray-800 text-white rounded-r ${currentIndex === maxIndex && 'hidden'}`}>
-              &gt; {/* Right arrow */}
-            </button>
-          </div>
+  <div className='flex items-center'>
+    <button onClick={scrollLeft} className={`px-4 py-2 bg-gray-800 text-white rounded-l ${currentIndex === 0 && 'hidden'}`}>
+      &lt; {/* Left arrow */}
+    </button>
+    <div className='flex p-5 items-center' style={{ width: '100%', overflowX: 'hidden' }} ref={scrollContainerRef}>
+      {/* Horizontal scrolling container */}
+      {cardData && cardData.map((card, index) => (
+        <div
+          key={index}
+          className={`w-full sm:w-1/3 mx-2`}
+          style={{
+            flexShrink: 0,
+            display: currentIndex === Math.floor(index / 3) ? 'block' : 'none',
+          }}
+        >
+          <Link to={card.link}>
+            <Card className='w-full' imgAlt='' imgSrc={card.image}>
+              <h5 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+                {card.title}
+              </h5>
+              <p className='font-normal text-gray-700 dark:text-gray-400'>
+                {card.content}
+              </p>
+            </Card>
+          </Link>
         </div>
+      ))}
+    </div>
+    <button onClick={scrollRight} className={`px-4 py-2 bg-gray-800 text-white rounded-r ${currentIndex === maxIndex && 'hidden'}`}>
+      &gt; {/* Right arrow */}
+    </button>
+  </div>
+</div>
+
+
 
         {/* Fifth Section */}
         <div className='flex flex-wrap items-center justify-center bg-black text-gray-500 pt-10'>
