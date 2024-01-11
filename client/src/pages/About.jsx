@@ -4,12 +4,20 @@ import Hosting from '../../img/Hosting.png';
 import Domain from '../../img/Domain.png';
 import Design from '../../img/Design.png';
 import team_coding from '../../img/team_coding.jpg'
+import { Helmet } from 'react-helmet';
 
 const About = () => {
 
 
     return(
         <div className='bg-black'>
+            <Helmet>
+            <meta name="title" content="About | RaindropCoding" />
+            <meta name="description" content="With our Digital Marketing service we can help increase your reach and popularity" />
+            <meta name="keywords" content="Digital, Marketing, Website, Coding" />
+            <meta name="robots" content="index, follow" />
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            </Helmet>
         <div className='w-full text-center bg-black pt-10'>
             <h2 className='sm:text-5xl font-medium title-font text-white mb-4'>About Us</h2>
             <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto mb-4'></div>

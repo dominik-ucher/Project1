@@ -15,9 +15,9 @@ const sendEmail = (req, res) => {
 
   const mailOptions = {
     from: email,
-    to: selectedOption, // The recipient's email address based on the selected option
+    to: 'contact@raindropcoding.com', // The recipient's email address based on the selected option
     subject: `Contact Form Submission - ${subject}`,
-    text: `This is a message sent from Contact form on IL Trond website.\nHit "reply" to reply to sender.\n\n${message}`,
+    text: `This is a message sent from Contact form on RaindropCoding website.\nHit "reply" to reply to sender.\n\n${message}`,
     replyTo: `${name} <${email}>`,
   };
 

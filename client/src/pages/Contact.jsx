@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { Button } from 'flowbite-react'
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet';
 
 const Contact = () => {
   const axiosInstance = axios.create({baseURL: import.meta.env.VITE_REACT_APP_API_URL,});
@@ -49,6 +50,13 @@ const Contact = () => {
 
     return(
     <div className='flex flex-wrap items-center justify-center p-20 bg-black text-gray-500'>
+      <Helmet>
+            <meta name="title" content="Contact | RaindropCoding" />
+            <meta name="description" content="Let us know what you are thinking about, and contact us!" />
+            <meta name="keywords" content="Digital, Marketing, Website, Coding" />
+            <meta name="robots" content="index, follow" />
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            </Helmet>
         <div className='w-full text-center'>
           <h2 className='sm:text-5xl font-medium title-font text-white mb-4'>Contact Us</h2>
           <div className='w-16 h-1 rounded-full bg-white mx-auto'></div>
