@@ -91,6 +91,7 @@ const Home = () => {
     <div className='bg-black'>
           <Helmet>
             <title>Home | RaindropCoding</title>
+            <meta name="google-site-verification" content="00HFpe5Ha5Ha6bJGcVM7Lus8S_WAz-W7fG_eIhZF2D8" />
             <meta name="title" content="Home | RaindropCoding" />
             <meta name="description" content="RaindropCoding's digital marketing services are designed to help you reach your target audience and grow your business. We specialize in creating custom website designs" />
             <meta name="keywords" content="Raindrop, RaindropCoding, Coding, Digital, Marketing, Website" />
