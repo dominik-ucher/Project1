@@ -9,7 +9,6 @@ import Contact from "./pages/Contact";
 import References from "./pages/References";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Sitemap from "./online/sitemap.xml"
 
 
 const Layout = () =>{
@@ -44,10 +43,6 @@ const router = createBrowserRouter([
       {
         path:"/references",
         element:<References/>,
-      },
-      {
-        path:"/sitemap",
-        element:<Sitemap/>,
       },
     ]
   },
