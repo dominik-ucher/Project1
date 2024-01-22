@@ -7,17 +7,17 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 export default function DefaultNavbar() {
   return (
     <Navbar fluid className="sticky top-0 z-10 bg-black">
-      <Link to="/"><Navbar.Brand>
+      <a href="/"><Navbar.Brand>
         <LazyLoadImage alt="Logo" className="mr-3 h-12 sm:h-16" src={Logo_w_Text} />
         {/* <img alt="Logo" className="mr-3 h-12 sm:h-16" src={Logo_w_Text} /> */}
       </Navbar.Brand>
-      </Link>
+      </a>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <Link to="/" ><Navbar.Link className='text-white'>Home</Navbar.Link></Link>
-        <Link to="/about"><Navbar.Link className='text-white'>About</Navbar.Link></Link>
-        {/* <Link to="/references"><Navbar.Link className='text-white'>Projects</Navbar.Link></Link> */}
-        <Link to="/contact"><Navbar.Link className='text-white'>Contact</Navbar.Link></Link>
+        <a href="/" ><Navbar.Link className='text-white'>Home</Navbar.Link></a>
+        <a href="/about"><Navbar.Link className='text-white'>About</Navbar.Link></a>
+        {/* <a href="/references"><Navbar.Link className='text-white'>Projects</Navbar.Link></a> */}
+        <a href="/contact"><Navbar.Link className='text-white'>Contact</Navbar.Link></a>
       </Navbar.Collapse>
     </Navbar>
   );
