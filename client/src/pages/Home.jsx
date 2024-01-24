@@ -93,7 +93,7 @@ const Home = () => {
             <title>Home | RaindropCoding</title>
             <meta name="google-site-verification" content="00HFpe5Ha5Ha6bJGcVM7Lus8S_WAz-W7fG_eIhZF2D8" />
             <meta name="title" content="Home | RaindropCoding" />
-            <meta name="description" content="RaindropCoding's digital marketing services are designed to help you reach your target audience and grow your business. We specialize in creating custom website designs" />
+            <meta name="description" content="RaindropCoding digital marketing services are designed to help you reach your target audience and grow your business. We specialize in creating custom website designs" />
             <meta name="keywords" content="Raindrop, RaindropCoding, Coding, Digital, Marketing, Website" />
             <meta name="robots" content="index, follow" />
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -107,7 +107,7 @@ const Home = () => {
                   Welcome to
                 </h1>
                 <h1 className='text-4xl md:text-8xl font-bold tracking-tighter text-white'>
-                  RaindropCoding
+                  Raindrop Coding
                 </h1>
               </FadeIn>
               <FadeIn delay={400}>
@@ -140,7 +140,7 @@ const Home = () => {
         </div>
         <div className='flex flex-wrap items-center justify-center bg-black text-gray-500'>
           <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-            <LazyLoadImage alt="feature" className="object-cover object-center h-full w-full" src={team_coding} />
+            <LazyLoadImage alt="raindropcoding website design" className="object-cover object-center h-full w-full" src={team_coding} />
             {/* <img alt="feature" className="object-cover object-center h-full w-full" src={team_coding} /> */}
           </div>
 
