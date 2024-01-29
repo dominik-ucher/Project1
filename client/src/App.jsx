@@ -52,7 +52,7 @@ const router = createBrowserRouter([
   // },
 ]);
 
-function App() {
+function AppRouting() {
   return (
     <RouterProvider router={router}/>
   );
@@ -60,4 +60,4 @@ function App() {
 
 
 
-export default App;
+export default AppRouting;
