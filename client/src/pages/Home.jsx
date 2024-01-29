@@ -111,9 +111,9 @@ const Home = () => {
                 </h1>
               </FadeIn>
               <FadeIn delay={400}>
-                <p className='pt-3 md:pt-5 text-sm md:text-2xl font-normal leading-relaxed text-orange-400'>
+                <h2 className='pt-3 md:pt-5 text-sm md:text-2xl font-normal leading-relaxed text-orange-400'>
                   Where Ideas Come to Life on the Web!
-                </p>
+                </h2>
                 <div className='w-32 h-1 rounded-full bg-white mt-3 md:mt-5 inline-block' />
               </FadeIn>
             </div>
