@@ -11,7 +11,7 @@ app.use(cors({
     credentials: true,
 }));
 app.use(cookieParser());
-app.use("/api/contact", contactRoutes)
+// app.use("/api/contact", contactRoutes)
 
 
 app.listen(8801,()=>{
