@@ -49,7 +49,7 @@ const Contact = () => {
 
 
     return(
-    <div className='flex flex-wrap items-center justify-center p-20 bg-black text-gray-500'>
+      <div className='flex flex-wrap items-center justify-center p-20 bg-black text-gray-500'>
         <Helmet>
             <title>Contact | RaindropCoding</title>
             <meta name="title" content="Contact | RaindropCoding" />
@@ -58,23 +58,51 @@ const Contact = () => {
             <meta name="robots" content="index, follow" />
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         </Helmet>
-        <div className='w-full text-center'>
-          <h2 className='sm:text-5xl font-medium title-font text-white mb-4'>Contact Us</h2>
-          <div className='w-16 h-1 rounded-full bg-white mx-auto'></div>
-          <p className="leading-relaxed text-lg mt-5">Let us know what you are thinking about,</p>
-          <p className="leading-relaxed text-lg">and contact us with the form bellow</p>
+        
+        <div className='w-full text-center mb-10'>
+            <h2 className='sm:text-5xl text-3xl font-medium title-font text-white mb-4 pt-16'>Kontakt Oss</h2>
+            <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto'></div>
+            <h2 className='sm:text-4xl text-2xl font-md text-white pt-8 mb-4'>Kom gjerne for en uforpliktende samtale over en kopp kaffe!</h2>
         </div>
-        <form className='gap-5 flex justify-center flex-col w-72'>
-        <input type="text" placeholder='Name' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={name} onChange={(e) => setName(e.target.value)}/>
-        <input type="text" placeholder='email@email.com' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={email} onChange={(e) => setEmail(e.target.value)}/>
-        <input type="text" placeholder='About' className='mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={subject} onChange={(e) => setSubject(e.target.value)}/>
-        <textarea type="textarea" placeholder='Message' className='h-32 mt-10 bg-black border-b-2 border-t-0 border-x-0 border-white' value={message} onChange={(e) => setMessage(e.target.value)}/>
-        <Button pill color="gray" className="mt-5" onClick={handleSubmit}>Send</Button>
-        {isSent && (
-              <div className="text-green-500">Email Sent</div>
+        <form className='gap-5 flex justify-center flex-col w-full max-w-lg'>
+            <input 
+            type="text" 
+            placeholder='Bedriftens Navn' 
+            className='mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400'  
+            value={name} 
+            onChange={(e) => setName(e.target.value)} 
+            />
+            <input 
+            type="email" 
+            placeholder='E-post' 
+            className='mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400' 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
+            />
+            <input 
+            type="text" 
+            placeholder='Emne' 
+            className='mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400' 
+            value={subject} 
+            onChange={(e) => setSubject(e.target.value)} 
+            />
+            <textarea 
+            placeholder='Melding' 
+            className='h-32 mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400' 
+            value={message} 
+            onChange={(e) => setMessage(e.target.value)} 
+            />
+            <button 
+            className='mt-6 bg-orange-500 text-white font-bold py-3 px-6 rounded-full hover:bg-orange-600 transition duration-300 ease-in-out transform hover:scale-105' 
+            onClick={handleSubmit}
+            >
+            Sende
+            </button>
+            {isSent && (
+            <div className="text-green-500 mt-4">E-post er sendt</div>
             )}
         </form>
-    </div>
+        </div>
     )
 }
 

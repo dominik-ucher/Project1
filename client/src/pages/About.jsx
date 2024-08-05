@@ -10,7 +10,7 @@ const About = () => {
 
 
     return(
-        <div className='bg-black'>
+        <div className='bg-gray-900'>
             <Helmet>
             <title>About | RaindropCoding</title>
             <meta name="title" content="About | RaindropCoding" />
@@ -19,68 +19,77 @@ const About = () => {
             <meta name="robots" content="index, follow" />
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             </Helmet>
-        <div className='w-full text-center bg-black pt-10'>
-            <h2 className='sm:text-5xl font-medium title-font text-white mb-4'>About Us</h2>
-            <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto mb-4'></div>
-            </div>
-        <div className='flex flex-wrap items-center justify-center bg-black text-gray-500'>
-            <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-            <img alt="feature" className="object-cover object-center h-full w-full" src={team_coding} />
-            </div>
+{/* Third Section */}
+<div className='bg-gray-900 bg-pattern pt-16'>
+  <div className='w-full text-center pt-10 pb-10'>
+    <h2 className='sm:text-5xl text-3xl font-medium title-font text-white mb-4'>Om Oss</h2>
+    <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto mb-8'></div>
+    <div className='flex flex-wrap items-center justify-center text-gray-300'>
+      <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden p-4">
+        <img alt="raindropcoding website design" className="object-cover object-center h-auto w-full rounded-lg shadow-lg" src={team_coding} />
+      </div>
 
-            <div className="lg:w-1/2 px-6 py-6">
-            <div className="flex flex-col lg:py-6 lg:pl-12 lg:text-left text-center">
-                <div className="flex flex-col mb-10 lg:items-start items-center">
-                <div className="flex-grow">
-                    <h2 className="text-white text-2xl title-font font-medium mb-3">Digital Marketing</h2>
-                    <p className="leading-relaxed text-lg">Our digital marketing services are designed to help you reach your target audience and grow your business. We offer a wide range of services, including search engine optimization (SEO), social media marketing, email marketing, and more. Our team of experts will work with you to create a customized marketing plan that meets your specific needs.</p>
-                </div>
-                </div>
-
-                <div className="flex flex-col mb-10 lg:items-start items-center">
-                <div className="flex-grow">
-                    <h2 className="text-white text-2xl title-font font-medium mb-3">Website Designs</h2>
-                    <p className="leading-relaxed text-lg">We specialize in creating custom website designs that are tailored to your business needs. Our team of designers will work with you to create a website that is both visually appealing and user-friendly. We use the latest design trends and technologies to ensure that your website is up-to-date and meets the needs of your customers.</p>
-                </div>
-                </div>
-
-                {/* Repeat the above "Free" section for other sections */}
+      <div className="lg:w-1/2 w-full px-6 py-6">
+        <div className="flex flex-col lg:py-6 lg:pl-12 lg:text-left text-center">
+          <div className="flex flex-col mb-10 lg:items-start items-center">
+            <div className="flex-grow">
+              <h2 className="text-white text-2xl title-font font-medium mb-3">Digital Markedsføring</h2>
+              <p className="leading-relaxed text-lg text-gray-300">
+                Våre tjenester innen digital markedsføring er utformet for å hjelpe deg med å nå din målgruppe og øke din bedrifts vekst. Vi tilbyr et bredt spekter av tjenester, inkludert søkemotoroptimalisering (SEO), markedsføring på sosiale medier, e-postmarkedsføring og mer.
+              </p>
             </div>
+          </div>
+
+          <div className="flex flex-col mb-10 lg:items-start items-center">
+            <div className="flex-grow">
+              <h2 className="text-white text-2xl title-font font-medium mb-3">Nettside Utvikling</h2>
+              <p className="leading-relaxed text-lg text-gray-300">
+                Vi spesialiserer oss på å lage skreddersydde nettsidedesign som er tilpasset dine forretningsbehov. Vårt team av designere vil samarbeide med deg for å skape en nettside som både er visuelt tiltalende og brukervennlig. Vi bruker de nyeste designtrendene og teknologiene for å sikre at nettsiden din er oppdatert og møter kundenes behov.
+              </p>
             </div>
+          </div>
+
+          {/* Add more sections as needed */}
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <div className='flex flex-wrap items-center justify-center bg-black text-gray-500 pt-10 pb-16'>
-            <div className='w-full text-center'>
-            <h2 className='sm:text-5xl font-medium title-font text-white mb-4'>What We Do</h2>
-            <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto'></div>
-            </div>
 
-            <div className='grid grid-cols-3 gap-10 px-10 mt-10'>
-            <div className='flex justify-center text-center md:col-span-1 col-span-3'>
-                <div className="flex-grow">
-                <img src={Hosting} alt="" className='rounded w-60 mx-auto'/> {/* Added mx-auto */}
-                <h2 className="text-white text-2xl title-font font-medium mb-3 pt-10">Digital Marketing</h2>
-                <div className='w-32 h-1 rounded-full bg-orange-400 mx-auto mt-5'></div>
-                <p className="leading-relaxed text-lg mt-5">With our Digital Marketing service we can help increase your reach and popularity, aswell as grow your digital presence.</p>
-                </div>
-            </div>
-            <div className='flex justify-center text-center md:col-span-1 col-span-3'>
-                <div className="flex-grow">
-                <img src={Design} alt="" className='rounded w-60 mx-auto'/> {/* Added mx-auto */}
-                <h2 className="text-white text-2xl title-font font-medium mb-3 pt-10">Website Designs</h2>
-                <div className='w-32 h-1 rounded-full bg-orange-400 mx-auto mt-5'></div>
-                <p className="leading-relaxed text-lg mt-5">We specialize in website designs custom to your needs. We make user friendly and websites that are both appealing and easy to use.</p>
-                </div>
-            </div>
-            <div className='flex justify-center text-center md:col-span-1 col-span-3'>
-                <div className="flex-grow">
-                <img src={Domain} alt="" className='rounded w-60 mx-auto'/> {/* Added mx-auto */}
-                <h2 className="text-white text-2xl title-font font-medium mb-3 pt-10">Digital Management</h2>
-                <div className='w-32 h-1 rounded-full bg-orange-400 mx-auto mt-5'></div>
-                <p className="leading-relaxed text-lg mt-5"> We simplify the process of managing your website and other digital processes, by keeping an eye on everything for you! So that you can use your time more efficently.</p>
-                </div>
-            </div>
-            </div>
+
+<div className='flex flex-wrap items-center justify-center bg-gray-900 text-gray-300 pt-10 pb-16'>
+  <div className='w-full text-center'>
+    <h2 className='sm:text-5xl font-medium title-font text-white mb-4'>Hva gjør vi?</h2>
+    <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto'></div>
+  </div>
+
+  <div className='grid grid-cols-3 gap-10 px-10 mt-10'>
+    <div className='flex justify-center text-center md:col-span-1 col-span-3'>
+      <div className="flex-grow">
+        <img src={Hosting} alt="" className='rounded w-60 mx-auto' />
+        <h2 className="text-white text-2xl title-font font-medium mb-3 pt-10">Digital Markedsføring</h2>
+        <div className='w-32 h-1 rounded-full bg-orange-400 mx-auto mt-5'></div>
+        <p className="leading-relaxed text-lg mt-5">Med vår tjeneste for digital markedsføring kan vi hjelpe deg med å øke din rekkevidde og popularitet, samt styrke din digitale tilstedeværelse.</p>
+      </div>
+    </div>
+    <div className='flex justify-center text-center md:col-span-1 col-span-3'>
+      <div className="flex-grow">
+        <img src={Design} alt="" className='rounded w-60 mx-auto' />
+        <h2 className="text-white text-2xl title-font font-medium mb-3 pt-10">Nettside Bygging</h2>
+        <div className='w-32 h-1 rounded-full bg-orange-400 mx-auto mt-5'></div>
+        <p className="leading-relaxed text-lg mt-5">Vi spesialiserer oss på nettsidedesign som er skreddersydd dine behov. Vi lager brukervennlige nettsider som både er tiltalende og enkle å bruke.</p>
+      </div>
+    </div>
+    <div className='flex justify-center text-center md:col-span-1 col-span-3'>
+      <div className="flex-grow">
+        <img src={Domain} alt="" className='rounded w-60 mx-auto' />
+        <h2 className="text-white text-2xl title-font font-medium mb-3 pt-10">Digital Håndtering    </h2>
+        <div className='w-32 h-1 rounded-full bg-orange-400 mx-auto mt-5'></div>
+        <p className="leading-relaxed text-lg mt-5">Vi forenkler prosessen med å administrere nettsiden din og andre digitale prosesser ved å holde øye med alt for deg! Slik at du kan bruke tiden din mer effektivt.</p>
+      </div>
+    </div>
+  </div>
         </div>
         </div>
     )

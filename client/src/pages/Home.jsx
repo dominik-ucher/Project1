@@ -100,7 +100,7 @@ const Home = () => {
           </Helmet>
         {/* First Section */}
         <FadeIn>
-          <div className='flex items-center justify-center h-80 bg-black md:h-screen'>
+          <div className='flex items-center justify-center h-80 bg-black md:h-screen' >
             <div className='text-center'>
               <FadeIn delay={300}>
                 <h1 className='text-4xl md:text-8xl font-bold tracking-tighter text-white'>
