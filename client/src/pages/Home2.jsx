@@ -3,6 +3,8 @@ import Background from '../../img/background.jpg';
 import Hosting from '../../img/Hosting.png';
 import Domain from '../../img/Domain.png';
 import Design from '../../img/Design.png';
+import Logo2 from '../../img/new_name.png'
+import imgback from '../../img/imgtest2.png'
 import { Button, Card } from 'flowbite-react';
 import '../style.css';
 import FadeIn from 'react-fade-in/lib/FadeIn';
@@ -100,7 +102,7 @@ const Home = () => {
           </Helmet>
         {/* First Section */}
         <FadeIn>
-          <div className='relative flex items-center justify-center h-80 md:h-screen' style={{ backgroundImage: "url('../../img/imgtest2.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <div className='relative flex items-center justify-center h-80 md:h-screen' style={{ backgroundImage: `url(${imgback})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className='absolute inset-0 bg-black opacity-50'></div> {/* Overlay with transparency */}
             <div className='relative text-center'>
               <FadeIn delay={300}>
@@ -123,7 +125,7 @@ const Home = () => {
 
         {/* Second Section */}
         <div className='flex flex-col items-center justify-center h-auto p-10 bg-gray-900'>
-            <img className='md:h-48 mb-6' src='../../img/new_name.png' alt='Company Logo' />
+            <img className='md:h-48 mb-6' src={Logo2} alt='Company Logo' />
             <h2 className='sm:text-5xl text-3xl font-medium title-font text-white mb-4 text-center'>
                 Vi styrker <span className='underline'>identitet</span> og <span className='underline'>merkevare</span> til bedrifter ved digital markedsføring, profilering og designs
             </h2>
