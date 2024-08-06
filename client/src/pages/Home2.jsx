@@ -132,10 +132,11 @@ const Home = () => {
             <p className='text-lg text-gray-400 text-center pb-10'>
                 Vi hjelper din bedrift med å skille seg ut i det digitale landskapet.
             </p>
-
+            <Link to="/contact">
             <button className='bg-orange-500 text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:bg-orange-600 transition duration-300 ease-in-out transform hover:scale-105'>
                 Ta Kontakt!
             </button>
+            </Link>
         </div>
 
 

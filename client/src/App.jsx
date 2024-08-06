@@ -3,6 +3,7 @@ import {
   RouterProvider,
   Outlet,
 } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -16,6 +17,7 @@ const Layout = () =>{
   return (
     <>
     <div className="bg-gray-100">
+    <ScrollToTop />
     <Navbar />
     <Outlet />
     <Footer />
