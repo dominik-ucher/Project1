@@ -15,6 +15,7 @@ import Idrettslaget_Trond from '../../img/Idrettslaget_Trond.png'
 import raindrop from '../../img/raindrop.jpg'
 import { Helmet } from 'react-helmet';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import animepic from '../../img/anime.gif'
 
 const Home = () => {
   const scrollContainerRef = useRef(null);
@@ -148,7 +149,8 @@ const Home = () => {
             <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto mb-8'></div>
             <div className='flex flex-wrap items-center justify-center text-gray-700'>
             <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden p-4">
-                <LazyLoadImage alt="raindropcoding website design" className="object-cover object-center h-auto w-full rounded-lg shadow-lg" src={team_coding} />
+                <LazyLoadImage alt="raindropcoding website design" className="object-cover object-center h-auto w-full rounded-lg" src={animepic} />
+                {/* <LazyLoadImage alt="raindropcoding website design" className="object-cover object-center h-auto w-full rounded-lg shadow-lg" src={team_coding} /> */}
             </div>
 
             <div className="lg:w-1/2 w-full px-6 py-6">
