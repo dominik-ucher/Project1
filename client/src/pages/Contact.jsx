@@ -56,10 +56,10 @@ const Contact = () => {
   return (
     <div className='flex flex-wrap items-center justify-center p-20 bg-black text-gray-500'>
       <Helmet>
-        <title>Contact | RaindropCoding</title>
-        <meta name="title" content="Contact | RaindropCoding" />
-        <meta name="description" content="Let us know what you are thinking about, and contact us!" />
-        <meta name="keywords" content="Raindrop, RaindropCoding, Coding, Digital, Marketing, Website" />
+        <title>Kontakt Oss</title>
+        <meta name="title" content="Kontakt Oss" />
+        <meta name="description" content="Kom gjerne for en uforpliktende samtale over en kopp kaffe!" />
+        <meta name="keywords" content="Raindrop Coding, RaindropCoding, digital, markedsføring, digitalmarkedsføring" />
         <meta name="robots" content="index, follow" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       </Helmet>

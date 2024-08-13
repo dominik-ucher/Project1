@@ -12,10 +12,10 @@ const About = () => {
     return(
         <div className='bg-gray-900'>
             <Helmet>
-            <title>About | RaindropCoding</title>
-            <meta name="title" content="About | RaindropCoding" />
-            <meta name="description" content="With our Digital Marketing service we can help increase your reach and popularity" />
-            <meta name="keywords" content="Raindrop, RaindropCoding, Coding, Digital, Marketing, Website" />
+            <title>Om Oss</title>
+            <meta name="title" content="Om Oss" />
+            <meta name="description" content="Våre tjenester innen digital markedsføring er utformet for å hjelpe deg med å nå din målgruppe og øke din bedrifts vekst. Vi tilbyr et bredt spekter av tjenester, inkludert søkemotoroptimalisering (SEO), markedsføring på sosiale medier, e-postmarkedsføring og mer." />
+            <meta name="keywords" content="Raindrop Coding, RaindropCoding, digital, markedsføring, digitalmarkedsføring, nettside, kjøpe nettside" />
             <meta name="robots" content="index, follow" />
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             </Helmet>

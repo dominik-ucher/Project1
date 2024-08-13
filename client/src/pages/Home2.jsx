@@ -64,11 +64,11 @@ const Home = () => {
 
     <div className='bg-black'>
           <Helmet>
-            <title>Home | RaindropCoding</title>
+            <title>RaindropCoding</title>
             <meta name="google-site-verification" content="00HFpe5Ha5Ha6bJGcVM7Lus8S_WAz-W7fG_eIhZF2D8" />
-            <meta name="title" content="Home | RaindropCoding" />
-            <meta name="description" content="RaindropCoding digital marketing services are designed to help you reach your target audience and grow your business. We specialize in creating custom website designs" />
-            <meta name="keywords" content="Raindrop, RaindropCoding, Coding, Digital, Marketing, Website" />
+            <meta name="title" content="RaindropCoding" />
+            <meta name="description" content="Vi styrker identitet og merkevare til bedrifter ved digital markedsføring, profilering og designs. Vi hjelper din bedrift med å skille seg ut i det digitale landskapet." />
+            <meta name="keywords" content="Raindrop Coding, RaindropCoding, digital, markedsføring, digitalmarkedsføring, nettside, kjøpe nettside" />
             <meta name="robots" content="index, follow" />
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
           </Helmet>
