@@ -6,7 +6,7 @@ import Design from '../../img/Design.png';
 import team_coding from '../../img/team_coding.jpg'
 import { Helmet } from 'react-helmet';
 
-const About = () => {
+export default function About() {
 
 
     return(
@@ -94,5 +94,3 @@ const About = () => {
         </div>
     )
 }
-
-export default About

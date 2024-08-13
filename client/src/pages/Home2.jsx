@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import animepic from '../../img/anime.gif'
 
-const Home = () => {
+export default function Home2() {
   const axiosInstance = axios.create({baseURL: import.meta.env.VITE_REACT_APP_API_URL,});
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -224,6 +224,4 @@ const Home = () => {
 
       </div>
   );
-};
-
-export default Home;
+}

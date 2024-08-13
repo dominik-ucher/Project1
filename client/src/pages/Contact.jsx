@@ -3,7 +3,7 @@ import { Button, TextInput, Spinner } from 'flowbite-react';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
-const Contact = () => {
+export default function Contact() {
   const axiosInstance = axios.create({ baseURL: import.meta.env.VITE_REACT_APP_API_URL });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -122,6 +122,4 @@ const Contact = () => {
       </form>
     </div>
   );
-};
-
-export default Contact;
+}
