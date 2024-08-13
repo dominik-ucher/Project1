@@ -1,65 +1,36 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Background from '../../img/background.jpg';
-import Hosting from '../../img/Hosting.png';
-import Domain from '../../img/Domain.png';
-import Design from '../../img/Design.png';
 import Logo2 from '../../img/new_name.png'
 import imgback from '../../img/imgtest2.png'
-import { Button, Card } from 'flowbite-react';
+import { Spinner } from 'flowbite-react';
 import '../style.css';
 import FadeIn from 'react-fade-in/lib/FadeIn';
 import { Link } from 'react-router-dom';
 import axios from 'axios'
-import team_coding from '../../img/team_coding.jpg'
-import Idrettslaget_Trond from '../../img/Idrettslaget_Trond.png'
-import raindrop from '../../img/raindrop.jpg'
 import { Helmet } from 'react-helmet';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import animepic from '../../img/anime.gif'
 
 const Home = () => {
-  const scrollContainerRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const cardData = [
-    // Array containing your card data, each element represents a card
-    // You can customize this array with your actual card data
-    {
-      title: 'Idrettslaget Trond',
-      image: Idrettslaget_Trond,
-      content: 'We had a goal to make a brand new and user-friendly website for Idrettslaget Trond. The website had new features and functions aswell as a payment gateway, so that they can send payments from the website aswell.',
-      link: 'https://rosenborgbanen.no'
-    },
-    // ... More cards
-  ];
-
-  const maxIndex = Math.ceil(cardData.length / 3) - 1;
-
-  const scrollLeft = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  const scrollRight = () => {
-    if (currentIndex < 3) { // Adjust this based on the number of cards
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
   const axiosInstance = axios.create({baseURL: import.meta.env.VITE_REACT_APP_API_URL,});
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
-
   const [isSent, setIsSent] = useState(false);
-
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+
+    if (!name || !email || !subject || !message) {
+      setErrorMessage("Alle feltene må fylles ut.");
+      return;
+    }
+
+    setIsLoading(true);
+    setErrorMessage("");
+
     try {
       const response = await axiosInstance.post('/api/contact/send-email', {
         name: name,
@@ -72,20 +43,20 @@ const Home = () => {
           'Content-Type': 'application/json',
         },
       });
-  
+
       if (response.status === 200) {
-        // Handle success
         setIsSent(true);
         setName("");
         setEmail("");
         setSubject("");
         setMessage("");
       } else {
-        // Handle failure
         console.error('Failed to send email');
       }
     } catch (error) {
       console.error('An error occurred', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -184,49 +155,72 @@ const Home = () => {
 
         {/* Sixth Section */}
         <div className='flex flex-wrap items-center justify-center p-20 bg-black text-gray-500'>
-        <div className='w-full text-center mb-10'>
-            <h2 className='sm:text-5xl text-3xl font-medium title-font text-white mb-4'>Kontakt Oss</h2>
-            <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto'></div>
-        </div>
-        <form className='gap-5 flex justify-center flex-col w-full max-w-lg'>
-            <input 
-            type="text" 
-            placeholder='Bedriftens Navn' 
-            className='mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400'  
-            value={name} 
-            onChange={(e) => setName(e.target.value)} 
-            />
-            <input 
-            type="email" 
-            placeholder='E-post' 
-            className='mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400' 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            />
-            <input 
-            type="text" 
-            placeholder='Emne' 
-            className='mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400' 
-            value={subject} 
-            onChange={(e) => setSubject(e.target.value)} 
-            />
-            <textarea 
-            placeholder='Melding' 
-            className='h-32 mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400' 
-            value={message} 
-            onChange={(e) => setMessage(e.target.value)} 
-            />
-            <button 
-            className='mt-6 bg-orange-500 text-white font-bold py-3 px-6 rounded-full hover:bg-orange-600 transition duration-300 ease-in-out transform hover:scale-105' 
-            onClick={handleSubmit}
-            >
-            Sende
-            </button>
-            {isSent && (
-            <div className="text-green-500 mt-4">E-post er sendt</div>
-            )}
-        </form>
-        </div>
+      <Helmet>
+        <title>Contact | RaindropCoding</title>
+        <meta name="title" content="Contact | RaindropCoding" />
+        <meta name="description" content="Let us know what you are thinking about, and contact us!" />
+        <meta name="keywords" content="Raindrop, RaindropCoding, Coding, Digital, Marketing, Website" />
+        <meta name="robots" content="index, follow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      </Helmet>
+
+      <div className='w-full text-center mb-10'>
+        <h2 className='sm:text-5xl text-3xl font-medium title-font text-white mb-4 pt-16'>Kontakt Oss</h2>
+        <div className='w-16 h-1 rounded-full bg-orange-400 mx-auto'></div>
+        <h2 className='sm:text-4xl text-2xl font-md text-white pt-8 mb-4'>Kom gjerne for en uforpliktende samtale over en kopp kaffe!</h2>
+      </div>
+      <form className='gap-5 flex justify-center flex-col w-full max-w-lg' onSubmit={handleSubmit}>
+        <input 
+          type="text" 
+          placeholder='Bedriftens Navn' 
+          className='mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400'  
+          value={name} 
+          onChange={(e) => setName(e.target.value)} 
+        />
+        <input 
+          type="email" 
+          placeholder='E-post' 
+          className='mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400' 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+        />
+        <input 
+          type="text" 
+          placeholder='Emne' 
+          className='mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400' 
+          value={subject} 
+          onChange={(e) => setSubject(e.target.value)} 
+        />
+        <textarea 
+          placeholder='Melding' 
+          className='h-32 mt-4 p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400' 
+          value={message} 
+          onChange={(e) => setMessage(e.target.value)} 
+        />
+        <button 
+          type="submit"
+          className='mt-6 bg-orange-500 text-white font-bold py-3 px-6 rounded-full hover:bg-orange-600 transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center' 
+          disabled={isLoading}
+        >
+          {isLoading ? (
+            <>
+              <Spinner size="sm" light className="mr-2" />
+              Sender...
+            </>
+          ) : (
+            "Sende"
+          )}
+        </button>
+        {errorMessage && (
+          <div className="text-red-500 mt-4">{errorMessage}</div>
+        )}
+        {isSent && (
+          <div className="text-green-500 mt-4 bg-gray-800 p-4 rounded-lg">
+            <strong>E-post er sendt!</strong> Vi tar kontakt med deg så snart som mulig.
+          </div>
+        )}
+      </form>
+    </div>
 
       </div>
   );
