@@ -13,4 +13,19 @@ export default defineConfig({
     }
   },
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        client: './src/entry-client.jsx',
+        server: './src/entry-server.jsx'
+      },
+      output: {
+        dir: 'dist',
+        format: 'esm'
+      }
+    }
+  },
+  ssr: {
+    noExternal: ['react', 'react-dom']
+  },
 })
